@@ -1,0 +1,92 @@
+############################################################
+   TITANIC SURVIVAL PREDICTION - AI/ML PROJECT
+############################################################
+[WARNING] 'train.csv' not found. Generating a synthetic Titanic-like dataset instead (for demo purposes only).
+
+[INFO] Dataset shape: (891, 12)
+
+[INFO] First 5 rows:
+   PassengerId  Survived  Pclass  ...   Fare Cabin  Embarked
+0            1         1       3  ...  11.85   NaN         S
+1            2         0       2  ...  54.75   NaN         S
+2            3         0       3  ...   4.00   NaN         S
+3            4         1       3  ...  37.98   NaN         S
+4            5         1       1  ...  39.00   NaN         C
+
+[5 rows x 12 columns]
+
+[INFO] Missing values per column:
+PassengerId      0
+Survived         0
+Pclass           0
+Name             0
+Sex              0
+Age            178
+SibSp            0
+Parch            0
+Ticket           0
+Fare             0
+Cabin          891
+Embarked         2
+dtype: int64
+
+[INFO] Training samples: 712  |  Testing samples: 179
+
+============================================================
+MODEL: Logistic Regression
+============================================================
+Accuracy : 66.48%
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        Died       0.64      0.61      0.62        82
+    Survived       0.68      0.71      0.70        97
+
+    accuracy                           0.66       179
+   macro avg       0.66      0.66      0.66       179
+weighted avg       0.66      0.66      0.66       179
+
+Confusion Matrix:
+[[50 32]
+ [28 69]]
+
+============================================================
+MODEL: Random Forest
+============================================================
+Accuracy : 68.16%
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        Died       0.67      0.60      0.63        82
+    Survived       0.69      0.75      0.72        97
+
+    accuracy                           0.68       179
+   macro avg       0.68      0.68      0.68       179
+weighted avg       0.68      0.68      0.68       179
+
+Confusion Matrix:
+[[49 33]
+ [24 73]]
+
+[RESULT] Best performing model: Random Forest (68.16% accuracy)
+
+Feature Importance (Random Forest):
+  Fare        : 0.3198  ###############################
+  Age         : 0.2799  ###########################
+  Sex         : 0.1291  ############
+  Pclass      : 0.1034  ##########
+  Embarked    : 0.0490  ####
+  FamilySize  : 0.0390  ###
+  SibSp       : 0.0332  ###
+  Parch       : 0.0327  ###
+  IsAlone     : 0.0140  #
+
+------------------------------------------------------------
+SAMPLE PREDICTION -> 1st Class, Female, Age 28, Fare 80
+Predicted outcome : SURVIVED
+Survival probability: 84.00%
+------------------------------------------------------------
+
+[INFO] Done. Project executed successfully.
